@@ -1,3 +1,13 @@
-// .header {
+.header {
 
-// }
+  .container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-flow: row;
+  }
+
+    &__logo-link {
+      margin-right: auto;
+    }
+}

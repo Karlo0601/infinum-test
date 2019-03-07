@@ -26,4 +26,14 @@ class Internationalization extends Config {
   public function load_theme_textdomain() {
     load_theme_textdomain( static::THEME_NAME, get_template_directory() . '/languages' );
   }
+
+  /**
+   * Global labels
+   */
+  public static function global_labels() {
+    $labels = [
+        'label_full_name' => __( 'Full name', 'portfolio-inf' ),
+    ];
+    return $labels;
+  }
 }

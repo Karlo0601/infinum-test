@@ -12,6 +12,7 @@ $content-style: (
   @include text-size(default);
   line-height: 1.5;
   color: map-get($content-style, 'text-color');
+  clear: both;
 
   p,
   ul,
@@ -119,6 +120,11 @@ $content-style: (
   blockquote {
     @extend %list-reset;
     font-style: italic;
+    float: left;
+    margin-right: 20px;
+    clear: left;
+    padding: 45px;
+    background-color: #efefef;
   }
 
   em {

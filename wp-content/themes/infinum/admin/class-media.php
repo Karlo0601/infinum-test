@@ -38,6 +38,7 @@ class Media {
    */
   public function add_custom_image_sizes() {
     add_image_size( 'listing', 570, 320, true );
+    add_image_size( 'grid', 360, 289, true );
   }
 
   /**

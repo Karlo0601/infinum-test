@@ -13,9 +13,11 @@ namespace Infinum\Includes;
 
 use Infinum\Admin as Admin;
 use Infinum\Admin\Menu as Menu;
+use Infinum\Admin\Customizer as Customizer;
 use Infinum\Plugins\Acf as Acf;
 use Infinum\Theme as Theme;
 use Infinum\Theme\Utils as Utils;
+
 
 /**
  * The main start class.
@@ -80,13 +82,14 @@ class Main {
    * @since 1.0.0
    */
   private function define_admin_hooks() {
-    $admin   = new Admin\Admin();
-    $login   = new Admin\Login();
-    $editor  = new Admin\Editor();
-    $users   = new Admin\Users();
-    $widgets = new Admin\Widgets();
-    $media   = new Admin\Media();
-    $menu    = new Menu\Menu();
+    $admin      = new Admin\Admin();
+    $login      = new Admin\Login();
+    $editor     = new Admin\Editor();
+    $users      = new Admin\Users();
+    $widgets    = new Admin\Widgets();
+    $media      = new Admin\Media();
+    $menu       = new Menu\Menu();
+    $customizer = new Customizer();
 
     // Admin.
     $this->loader->add_action( 'login_enqueue_scripts', $admin, 'enqueue_styles' );
@@ -115,6 +118,7 @@ class Main {
     $this->loader->add_action( 'after_setup_theme', $media, 'add_theme_support' );
     $this->loader->add_action( 'after_setup_theme', $media, 'add_custom_image_sizes' );
     $this->loader->add_filter( 'wp_handle_upload_prefilter', $media, 'check_svg_on_media_upload' );
+
   }
 
   /**
@@ -126,6 +130,7 @@ class Main {
     $theme      = new Theme\Theme();
     $general    = new Theme\General();
     $pagination = new Theme\Pagination();
+    $shortcode  = new Utils\Shortcodes();
 
     // Enque styles and scripts.
     $this->loader->add_action( 'wp_enqueue_scripts', $theme, 'enqueue_styles' );
@@ -158,6 +163,7 @@ class Main {
     // Pagination.
     $this->loader->add_filter( 'next_posts_link_attributes', $pagination, 'pagination_link_next_class' );
     $this->loader->add_filter( 'previous_posts_link_attributes', $pagination, 'pagination_link_prev_class' );
+
   }
 
   /**
