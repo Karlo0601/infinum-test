@@ -32,7 +32,7 @@ class Internationalization extends Config {
    */
   public static function global_labels() {
     $labels = [
-        'label_full_name' => __( 'Full name', 'portfolio-inf' ),
+        'label_read_more' => __( 'Read more', 'portfolio-inf' ),
     ];
     return $labels;
   }

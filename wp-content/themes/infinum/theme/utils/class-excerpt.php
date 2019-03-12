@@ -8,6 +8,8 @@
 
 namespace Infinum\Theme\Utils;
 
+use Infinum\Includes\Internationalization;
+
 /**
  * Class Excerpt
  */
@@ -18,11 +20,12 @@ class Excerpt {
    *
    * @param string  $source Excerpt text.
    * @param integer $limit  Number of characters to trim.
+   * @param boolean $read_more  Adds read more link to excerpt.
    * @return string         Trimmed excerpt.
    *
    * @since 1.0.0
    */
-  public static function get_excerpt( $source = null, $limit = null ) {
+  public static function get_excerpt( $source = null, $limit = null, $read_more = false ) {
 
     if ( empty( $source ) ) {
       return false;
@@ -31,7 +34,9 @@ class Excerpt {
     if ( empty( $limit ) ) {
       $limit = 140;
     }
-
+    if ( empty( $read_more ) ) {
+      return false;
+    }
     // Remove shortcode.
     $output = preg_replace( ' (\[.*?\])', '', $source );
     $output = strip_shortcodes( $output );
@@ -50,7 +55,13 @@ class Excerpt {
       $output = substr( $output, 0, strripos( $output, ' ' ) );
     }
 
-    $output = '<p>' . $output . '...</p>';
+    if ( $read_more ) {
+      $labels = Internationalization::global_labels();
+      $output = '<p>' . $output . '... <a class="read-more" href="' . get_permalink( ) . '">' . $labels['label_read_more'] . '</a></p>';
+    } else {
+      $output = '<p>' . $output . '...</p>';
+    }
+
     return $output;
   }
 

@@ -96,7 +96,7 @@ const allPlugins = [
       notify: true,
     },
     {
-      reload: false,
+      reload: true,
     },
   ),
 

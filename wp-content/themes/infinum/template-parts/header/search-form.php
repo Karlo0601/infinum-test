@@ -1,6 +1,6 @@
 <?php
 /**
- * Header Serch form
+ * Header Search form
  *
  * @package Infinum\Template_Parts\Header
  */

@@ -1,3 +1,6 @@
-// .article-grid {
-
-// }
+.article-grid {
+  max-width: calc(100% / 3 - 15px);
+  width: 100%;
+  margin-right: 15px;
+  margin-bottom: 45px;
+}
