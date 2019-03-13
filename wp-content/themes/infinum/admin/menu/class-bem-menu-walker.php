@@ -42,7 +42,7 @@ class Bem_Menu_Walker extends \Walker_Nav_Menu {
   }
 
   /**
-   * Dispaly element for wlaker
+   * Dispaly element for walker
    *
    * @param array   $element element.
    * @param array   $children_elements children_elements.
