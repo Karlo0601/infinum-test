@@ -32,10 +32,12 @@ if ( ! empty( $categories ) ) {
 $icon_comment = General_Helper::get_manifest_assets_data( 'ic-comment.svg' );
 $icon_feves   = General_Helper::get_manifest_assets_data( 'ic-heart.svg' );
 if ( is_sticky() ) {
-  $sticky = 'sticky';
+  echo '<article class="article-grid article-grid--sticky">';
+} else {
+  echo '<article class="article-grid">';
 }
 ?>
-<article class="article-grid <?php echo esc_attr( $sticky ); ?>">
+
   <div class="article-grid__container">
   <a class="article-grid__image" href="<?php the_permalink(); ?>">
     <img src="<?php echo esc_url( $image['image'] ); ?>" width="<?php echo esc_url( $image['width'] ); ?>" height="<?php echo esc_url( $image['height'] ); ?>" alt="<?php esc_html( the_title() ); ?>">
