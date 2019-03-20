@@ -9,12 +9,12 @@
   text-decoration: none;
   padding-left: 30px;
   padding-right: 30px;
-  font-weight: bold;
+  font-weight: 900;
   text-align: center;
   text-transform: uppercase;
-  border: 2px solid;
+  border: 0px solid;
   cursor: pointer;
-  border-radius: 0;
+  border-radius: 3px;
 
   transition: {
     property: background-color, color, border-color;
@@ -25,7 +25,28 @@
   @include button-sizes;
   @include button-colors;
 
+  i {
+    margin-right: 12px;
+    @include text-size(default);
+  }
+
   &--block {
     display: flex;
+  }
+
+  &--get-for-ios {
+    margin-right: $base-content-margin;
+
+    &:hover {
+      background-color: $base-battleship-color;
+    }
+
+  }
+  &--unicorn-owners {
+    background-color: $base-battleship-color;
+
+    &:hover {
+      background-color: $base-rouge-color;
+    }
   }
 }

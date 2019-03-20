@@ -52,11 +52,16 @@
 // @import 'components/layout/layout-grid';
 @import 'components/layout/layout';
 
+
+// Navigation
+@import 'components/navigation/main-navigation';
+
 // Sections
 // @import 'components/sections/';
 
 // Template parts
 // @import 'components/parts';
+@import 'components/parts/search-form';
 
 // Single
 @import 'components/single';

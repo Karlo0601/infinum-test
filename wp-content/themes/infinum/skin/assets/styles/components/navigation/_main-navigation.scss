@@ -1,0 +1,29 @@
+.main-navigation {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  margin-right: 60px;
+
+  &__container {
+    margin-left: auto;
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &__item {
+    padding: 10px $base-content-padding;
+  }
+  &__link {
+    @include text-size(default);
+    line-height: 1.4;
+    font-weight:700;
+    color: $base-dark-color;
+
+    &:hover {
+      color: $base-rouge-color;
+    }
+  }
+
+}

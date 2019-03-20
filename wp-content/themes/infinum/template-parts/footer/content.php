@@ -15,9 +15,6 @@ $logo_footer_img  = General_Helper::get_manifest_assets_data( 'logo.png' );
 $footer_facebook  = get_theme_mod( 'footer_facebook', '' );
 $footer_twitter   = get_theme_mod( 'footer_twitter', '' );
 $footer_instagram = get_theme_mod( 'footer_instagram', '' );
-$facebook_img     = General_Helper::get_manifest_assets_data( 'ic-facebook.svg' );
-$twitter_img      = General_Helper::get_manifest_assets_data( 'ic-twitter.svg' );
-$instagram_img    = General_Helper::get_manifest_assets_data( 'ic-instagram.svg' );
 ?>
 
 <footer class="footer">
@@ -29,7 +26,7 @@ $instagram_img    = General_Helper::get_manifest_assets_data( 'ic-instagram.svg'
       </a>
       <?php
       if ( $copyright ) {
-        echo '<p>' . esc_html( $copyright ) . '</p>';
+        echo '<p class="footer__copyright">' . esc_html( $copyright ) . '</p>';
       }
       ?>
     </div>
@@ -44,8 +41,7 @@ $instagram_img    = General_Helper::get_manifest_assets_data( 'ic-instagram.svg'
             <?php esc_html_e( 'Uniduck', 'infinum' ); ?>
             </a>
             <?php esc_html_e( ' on ', 'infinum' ); ?>
-            <i class="icon-ic-facebook">
-            </i>
+            <i class="icon-ic-facebook"></i>
           </li>
           <?php
         }

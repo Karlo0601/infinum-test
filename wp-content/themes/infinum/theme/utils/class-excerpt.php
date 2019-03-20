@@ -57,7 +57,7 @@ class Excerpt {
 
     if ( $read_more ) {
       $labels = Internationalization::global_labels();
-      $output = '<p>' . $output . '... <a class="read-more" href="' . get_permalink( ) . '">' . $labels['label_read_more'] . '</a></p>';
+      $output = '<p>' . $output . '... <a class="read-more" href="' . get_permalink() . '">' . $labels['label_read_more'] . '</a></p>';
     } else {
       $output = '<p>' . $output . '...</p>';
     }

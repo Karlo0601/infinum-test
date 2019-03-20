@@ -1,9 +1,10 @@
 //Base
-$base-font-family: 'Open Sans', Arial, sans-serif;
-$base-icons-font-family: 'infinum';
+$base-font-family: 'MuseoSansRounded', Arial, sans-serif;
+$base-icons-font-family: 'icomoon';
 
 // Container
 $base-content-padding: 15px;
+$base-content-margin: 30px;
 $base-content-full-width: 1140px;
 $base-content-width: $base-content-full-width + ($base-content-padding*2);
 
@@ -11,7 +12,7 @@ $base-content-width: $base-content-full-width + ($base-content-padding*2);
 $typography-map: (
   mobile: (
     giant:          72px,
-    huge:           42px,
+    huge:           48px,
     biggest:        30px,
     bigger:         28px,
     big:            26px,
@@ -32,7 +33,7 @@ $button-size-map: (
     default: (
       text-size: 14px,
       line-height: 1.4,
-      height: 64px,
+      height: 56px,
     )
   )
 );

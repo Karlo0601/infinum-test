@@ -5,3 +5,20 @@
 .field {
   padding-bottom: $form-field-spacing;
 }
+
+form ::-webkit-input-placeholder {
+  color: #828282;
+  font-weight: 500;
+}
+form :-moz-placeholder {
+  color: #828282;
+  font-weight: 500;
+}
+form ::-moz-placeholder {
+  color: #828282;
+  font-weight: 500;
+}
+form :-ms-input-placeholder {
+  color: #828282;
+  font-weight: 500;
+}

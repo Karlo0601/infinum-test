@@ -1,6 +1,71 @@
 
 .footer {
+  background-color: $base-whild-sand-color;
+  border-top: 1px solid $base-silver-sand-color;
+
   &__container {
     @include site-container();
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 70px 0 75px;
+  }
+  &__left-half {
+
+  }
+  &__logo-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    line-height: 0;
+  }
+  &__copyright {
+    margin: 0;
+  }
+  &__right-half {
+    margin-left: auto;
+  }
+  &__socials {
+    list-style-type: none;
+    text-align: right;
+    margin: 0;
+    padding: 0;
+  }
+  &__social-link {
+    font-size: 18px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    font-weight: 500;
+
+    i {
+      font-size: 20px;
+      padding-left: 12px;
+      vertical-align: middle;
+    }
+  }
+}
+
+.scroll-to-top {
+  position: fixed;
+  right: 5%;
+  bottom: 15%;
+  background-color: transparent;
+  color: $base-rouge-color;
+  font-size: 16px;
+  text-align: center;
+  padding: 10px 0;
+  text-transform: uppercase;
+
+  &::before {
+    content: '';
+    transform: rotate(45deg);
+    display: block;
+    position: absolute;
+    top: -15px;
+    left: 13px;
+    border-top: 2px solid $base-rouge-color;
+    border-left: 2px solid $base-rouge-color;
+    width: 26px;
+    height: 26px;
   }
 }

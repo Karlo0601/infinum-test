@@ -1,13 +1,15 @@
 .header {
 
-  .container {
+  &__container {
+    @include site-container();
     display: flex;
     justify-content: flex-end;
     align-items: center;
     flex-flow: row;
+    padding: 30px 15px;
   }
 
     &__logo-link {
-      margin-right: auto;
+      margin-right: 0;
     }
 }

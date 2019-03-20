@@ -8,6 +8,7 @@
 use Infinum\Theme\Utils\Images;
 use Infinum\Theme\Utils\Excerpt;
 use Infinum\Helpers\General_Helper;
+use Infinum\Theme\Utils\Post_View_Count;
 
 $image        = Images::get_post_image( 'grid' );
 $excerpt      = Excerpt::get_excerpt( get_the_excerpt(), 155, true );
@@ -29,15 +30,8 @@ if ( ! empty( $categories ) ) {
 
   }
 }
-$icon_comment = General_Helper::get_manifest_assets_data( 'ic-comment.svg' );
-$icon_feves   = General_Helper::get_manifest_assets_data( 'ic-heart.svg' );
-if ( is_sticky() ) {
-  echo '<article class="article-grid article-grid--sticky">';
-} else {
-  echo '<article class="article-grid">';
-}
 ?>
-
+<article class="article-grid">
   <div class="article-grid__container">
   <a class="article-grid__image" href="<?php the_permalink(); ?>">
     <img src="<?php echo esc_url( $image['image'] ); ?>" width="<?php echo esc_url( $image['width'] ); ?>" height="<?php echo esc_url( $image['height'] ); ?>" alt="<?php esc_html( the_title() ); ?>">
@@ -59,9 +53,11 @@ if ( is_sticky() ) {
     </div>
     <footer>
       <div class="article-grid__favorites">
-        <?php comments_number( '0 faves', '1 faves', '% faves' ); ?>
+        <i class="icon-ic-heart"></i>
+        <?php printf( esc_html( '%s faves', 'infinum-theme' ), esc_html( Post_View_Count::post_views_output( get_the_ID() ) ) ); ?>
       </div>
       <div class="article-grid__comments">
+        <i class="icon-ic-comment"></i>
         <?php comments_number( '0 comments', '1 comments', '% comments' ); ?>
       </div>
     </footer>

@@ -1,6 +1,42 @@
+.articles-grid {
+
+  &__container {
+    @include site-container();
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0;
+  }
+}
+
 .article-grid {
-  max-width: calc(100% / 3 - 15px);
+  max-width: calc(100% / 3 - 20px);
   width: 100%;
-  margin-right: 15px;
+  margin-right: 30px;
   margin-bottom: 45px;
+
+  &:nth-child(3n) {
+    margin-right: 0;
+  }
+
+  &--sticky {
+    width: 100%;
+    max-width: 100%;
+    margin-right: 0;
+
+    .article-grid__container {
+      display: flex;
+      flex-flow: row;
+      justify-content: flex-start;
+      align-content: center;
+    }
+  }
+  &__container {
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-content: center;
+  }
+
 }
