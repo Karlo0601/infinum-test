@@ -1,19 +1,20 @@
 $base-black-color:       #000000;
 $base-white-color:       #FFFFFF;
 
-$base-rouge-color:       #DC4BA3;
+$base-primary-color:     #DC4BA3;
 $base-dark-color:        #555555;
+$base-light-gray-color:  #999999;
 $base-abbey-color:       #424446;
 $base-battleship-color:  #b3b3b3;
-$base-chateau-color:     #A9B0B5;
+$base-chateau-color:     #B9B9B9;
 $base-silver-sand-color: #D8D8D8;
 $base-silver-color:      #E5E7E9;
-$base-porcelain-color:   #EEF0F1;
-$base-whild-sand-color:  #F4F4F4;
+$base-porcelain-color:   #F4F4F4;
+$base-whild-sand-color:  #F0F0F0;
 
 $base-malachite-color: #15C343;
 
-$base-primary-color: $base-rouge-color;
+$base-primary-color: $base-primary-color;
 
 $global-input-focus-color: rgba($base-black-color, 0.2);
 

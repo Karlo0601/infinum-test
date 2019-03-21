@@ -1,0 +1,21 @@
+.search-articles {
+
+  &__header {
+    @include site-container();
+    margin-bottom: 35px;
+  }
+  &__header-title {
+    text-align: left;
+  }
+
+  &__container {
+    @include site-container();
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 0 2%;
+
+
+  }
+}

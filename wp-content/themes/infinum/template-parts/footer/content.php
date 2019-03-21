@@ -48,7 +48,7 @@ $footer_instagram = get_theme_mod( 'footer_instagram', '' );
         if ( isset( $footer_twitter ) && '' !== $footer_twitter ) {
           ?>
           <li class="footer__social-link">
-            <?php esc_html_e( 'Like ', 'infinum' ); ?>
+            <?php esc_html_e( 'Follow ', 'infinum' ); ?>
             <a href="<?php echo esc_url( $footer_twitter ); ?>">
             <?php esc_html_e( '@uniduck', 'infinum' ); ?>
             </a>
@@ -60,7 +60,7 @@ $footer_instagram = get_theme_mod( 'footer_instagram', '' );
         if ( isset( $footer_instagram ) && '' !== $footer_instagram ) {
           ?>
           <li class="footer__social-link">
-            <?php esc_html_e( 'Like ', 'infinum' ); ?>
+            <?php esc_html_e( 'Follow ', 'infinum' ); ?>
             <a href="<?php echo esc_url( $footer_instagram ); ?>">
             <?php esc_html_e( '@uniduck', 'infinum' ); ?>
             </a>

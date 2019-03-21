@@ -36,7 +36,18 @@ class Customizer {
       )
     );
 
-    // Get iOS link.
+    // Get iOS Label.
+    $wp_customize->add_setting( 'get_ios_label' );
+
+    $wp_customize->add_control(
+      'get_ios_label',
+      array(
+          'label'      => esc_html__( 'Get for iOS label', 'infinum' ),
+          'section'    => 'website_customizer_options',
+          'type'       => 'text',
+      )
+    );
+    // Get iOS Link.
     $wp_customize->add_setting(
       'get_ios_link',
       array(
@@ -54,15 +65,20 @@ class Customizer {
       )
     );
 
-    // GetUnicorn link.
-    $wp_customize->add_setting(
-      'unicorn_owners_link',
+    // Get Unicorn Label.
+    $wp_customize->add_setting( 'unicorn_owners_label' );
+
+    $wp_customize->add_control(
+      'unicorn_owners_label',
       array(
-          'default'           => '#',
-          'capability'        => 'edit_theme_options',
-          'sanitize_callback' => 'esc_url_raw',
+          'label'      => esc_html__( 'Unicorn owners label', 'infinum' ),
+          'section'    => 'website_customizer_options',
+          'type'       => 'text',
       )
     );
+    // Get Unicorn Link.
+    $wp_customize->add_setting( 'unicorn_owners_link' );
+
     $wp_customize->add_control(
       'unicorn_owners_link',
       array(
@@ -79,6 +95,18 @@ class Customizer {
       'website_search_title',
       array(
           'label' => __( 'Homepage Search Title', 'infinum' ),
+          'type' => 'text',
+          'section' => 'website_customizer_options',
+      )
+    );
+
+    // Search input placeholder.
+    $wp_customize->add_setting( 'website_input_placeholder' );
+
+    $wp_customize->add_control(
+      'website_input_placeholder',
+      array(
+          'label' => __( 'Homepage Search Placeholder', 'infinum' ),
           'type' => 'text',
           'section' => 'website_customizer_options',
       )

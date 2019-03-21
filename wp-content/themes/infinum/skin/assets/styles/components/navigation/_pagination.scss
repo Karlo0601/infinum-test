@@ -1,0 +1,30 @@
+.pagination {
+  clear: both;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 35px;
+
+  /* .nav-links {
+
+  } */
+  .page-numbers {
+    font-size: 24px;
+    padding: 5px 10px;
+    transition: all ease-out 0.3s;
+
+    &.current, &:hover {
+      background-color: $base-primary-color;
+      color: $base-white-color;
+      transition: all ease-in 0.3s;
+    }
+
+    /* &.next {
+
+    }
+    &.prev {
+
+    } */
+  }
+}

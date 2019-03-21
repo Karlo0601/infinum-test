@@ -9,24 +9,19 @@ use Infinum\Theme\Utils\Images;
 use Infinum\Theme\Utils\Excerpt;
 use Infinum\Helpers\General_Helper;
 use Infinum\Theme\Utils\Post_View_Count;
+use Infinum\Theme\Utils\Theme_Helpers;
 
-$image        = Images::get_post_image( 'grid' );
+$image        = Images::get_post_image( 'grid-sticky' );
 $excerpt      = Excerpt::get_excerpt( get_the_excerpt(), 155, true );
-$allowed_html = array(
-    'a' => array(
-        'href' => array(),
-        'title' => array(),
-        'alt' => array(),
-    ),
-    'li' => array(),
-);
-$categories   = get_the_category();
-$output       = '';
-if ( ! empty( $categories ) ) {
+$allowed_html = Theme_Helpers::allowed_html();
 
-  foreach ( $categories as $category ) {
+$tags   = get_the_tags();
+$output = '';
+if ( ! empty( $tags ) ) {
 
-    $output .= '<li><a href="' . esc_url( get_category_link( $category->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'infinum' ), $category->name ) ) . '">' . esc_html( $category->name ) . '</a></li>';
+  foreach ( $tags as $tag_term ) {
+
+    $output .= '<li><a href="' . esc_url( get_category_link( $tag_term->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'infinum' ), $tag_term->name ) ) . '">' . esc_html( $tag_term->name ) . '</a></li>';
 
   }
 }
@@ -35,7 +30,7 @@ if ( ! empty( $categories ) ) {
 
   <div class="article-grid__container">
   <a class="article-grid__image" href="<?php the_permalink(); ?>">
-    <img src="<?php echo esc_url( $image['image'] ); ?>" width="<?php echo esc_url( $image['width'] ); ?>" height="<?php echo esc_url( $image['height'] ); ?>" alt="<?php esc_html( the_title() ); ?>">
+    <img src="<?php echo esc_url( $image['image'] ); ?>" width="<?php echo esc_attr( $image['width'] ); ?>" height="<?php echo esc_attr( $image['height'] ); ?>" alt="<?php esc_html( the_title() ); ?>">
   </a>
   <div class="article-grid__content">
     <header>
@@ -45,7 +40,7 @@ if ( ! empty( $categories ) ) {
         <?php esc_html( the_title() ); ?>
       </a>
     </h2>
-    <ul class="article-grid__categories">
+    <ul class="article-grid__tags">
       <?php echo wp_kses( $output, $allowed_html ); ?>
     </ul>
     </header>

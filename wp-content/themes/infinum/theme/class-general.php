@@ -21,5 +21,4 @@ class General {
   public function add_theme_support() {
     add_theme_support( 'title-tag', 'html5' );
   }
-
 }

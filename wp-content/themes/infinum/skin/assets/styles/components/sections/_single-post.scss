@@ -1,0 +1,158 @@
+.single-post {
+
+  &__image {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+    &::before {
+      content: '';
+      background-color: rgba(0,0,0,0.3);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 5;
+    }
+  }
+  &__title {
+    @include text-size(huge);
+    line-height: 60px;
+    font-weight: 500;
+    color: $base-white-color;
+    margin-bottom: 28px;
+    margin-top: auto;
+    z-index: 5;
+    position: relative;
+  }
+  &__author {
+    @include text-size(default);
+    font-weight: 500;
+    color: $base-white-color;
+    z-index: 5;
+    position: relative;
+    margin: 0;
+
+    i {
+      font-size: 23px;
+      vertical-align: sub;
+      margin-right: 15px;
+      color: $base-white-color;
+    }
+  }
+  &__back-to-blog {
+    margin-top: auto;
+    margin-bottom: 20px;
+    @include text-size(default);
+    font-weight: 500;
+    color: $base-white-color;
+    transition: color ease-out 0.2s;
+    z-index: 5;
+    position: relative;
+
+    &:hover {
+      color: $base-primary-color;
+      transition: color ease-in 0.2s;
+    }
+  }
+  &__content {
+    //@include site-container($max-width: 550px);
+    max-width: 1140px;
+    margin: 0 auto;
+    overflow: visible;
+    position: relative;
+    padding: 50px 15.5%;
+
+    p {
+      line-height: 30px;
+    }
+
+    img {
+      margin-left: -145px;
+      margin-right: -145px;
+      max-width: 950px;
+      position: relative;
+      width: 100vw;
+    }
+  }
+
+  .content {
+    &__quote {
+      font-size: 30px;
+      line-height: 45px;
+      font-style: normal;
+      text-align: center;
+      color: $base-primary-color;
+      background-color: $base-white-color;
+      font-weight: 300;
+      padding: 50px 70px;
+      quotes: "“" "”" "‘" "’";
+
+      &.align--left {
+        margin-left: -50%;
+        max-width: 100%;
+        width: 100%;
+        clear: left;
+        float: left;
+
+        @include media(desktop down){
+          margin-left: 0%;
+        }
+      }
+      &.align--right {
+        margin-right: -50%;
+        max-width: 100%;
+        width: 100%;
+        clear: right;
+        float: right;
+
+        @include media(desktop down){
+          margin-right: 0%;
+        }
+      }
+      &:before {
+          content: open-quote;
+      }
+      &:after {
+          content: close-quote;
+      }
+    }
+  }
+
+  .video {
+
+    &__container {
+
+    }
+    &__button {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-flow: row;
+      justify-content: center;
+      align-content: center;
+      border: 0;
+
+      i {
+        font-size: 95px;
+      }
+    }
+    &__title {
+      @include text-size(medium);
+      color: $base-light-gray-color;
+      text-align: center;
+    }
+  }
+}
+
+

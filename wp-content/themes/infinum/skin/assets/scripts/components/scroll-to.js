@@ -19,6 +19,14 @@ export class ScrollToElement {
   }
 
   scrolltoTopElement() {
+    window.addEventListener('scroll', () => {
+      if ($(window).scrollTop() >= 500) {
+        $(this.topElement).addClass('active');
+      } else {
+        $(this.topElement).removeClass('active');
+      }
+    });
+
     $(this.topElement).click((e) => {
       e.preventDefault();
       this.scrollToTop();

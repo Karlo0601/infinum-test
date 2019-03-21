@@ -39,6 +39,8 @@ class Theme extends Config {
    * @since 1.0.0
    */
   public function enqueue_scripts() {
+    global $wp_query;
+
     // jQuery.
     wp_deregister_script( 'jquery-migrate' );
     wp_deregister_script( 'jquery' );
@@ -57,7 +59,10 @@ class Theme extends Config {
       static::THEME_NAME . '-scripts',
       'themeLocalization',
       array(
-          'ajaxurl' => admin_url( 'admin-ajax.php' ),
+          'ajaxurl'       => admin_url( 'admin-ajax.php' ),
+          'ajax_nonce'    => wp_create_nonce( 'security-nonce' ),
+          'current_page'  => get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1,
+          'max_page'      => $wp_query->max_num_pages,
       )
     );
   }

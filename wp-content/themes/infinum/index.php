@@ -5,7 +5,21 @@
  * @package Infinum
  */
 
+ use Infinum\Helpers\General_Helper;
+ use Infinum\Theme\Utils\Theme_Helpers;
+
 get_header();
+
+$load_more    = General_Helper::inf_do_shortcode(
+  'loadmore',
+  array(
+      'container'     => 'js-load-more-container',
+      'post-type'     => 'post',
+      'post-per-page' => '6',
+      'label'         => 'Load more',
+  )
+);
+$allowed_html = Theme_Helpers::allowed_html();
 ?>
 <div class="container">
 
@@ -49,12 +63,9 @@ $archive_posts = new WP_Query( $args );
 if ( $archive_posts->have_posts() ) {
   while ( $archive_posts->have_posts() ) {
     $archive_posts->the_post();
-      get_template_part( 'template-parts/listing/articles/grid' );
+    get_template_part( 'template-parts/listing/articles/grid' );
 
   }
-
-  the_posts_pagination();
-
 } else {
 
   get_template_part( 'template-parts/listing/articles/empty' );
@@ -62,7 +73,11 @@ if ( $archive_posts->have_posts() ) {
 };
 ?>
 </div>
+<?php
 
+  echo wp_kses( $load_more, $allowed_html );
+
+?>
 </div>
 
 <?php

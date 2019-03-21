@@ -5,6 +5,12 @@
   margin: 0 auto;
 }
 
+@mixin site-container-narrow($max-width: $base-content-narrow) {
+  @extend %site-padding;
+  max-width: $max-width;
+  margin: 0 auto;
+}
+
 // Container no padding.
 @mixin container($max-width: $base-content-width) {
   max-width: $max-width;

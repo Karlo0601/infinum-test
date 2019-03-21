@@ -18,7 +18,6 @@ use Infinum\Plugins\Acf as Acf;
 use Infinum\Theme as Theme;
 use Infinum\Theme\Utils as Utils;
 
-
 /**
  * The main start class.
  *
@@ -102,6 +101,7 @@ class Main {
 
     // Editor.
     $this->loader->add_action( 'admin_init', $editor, 'add_editor_styles' );
+    $this->loader->add_action( 'init', $editor, 'quote_shortcode_button_init' );
 
     // Users.
     $this->loader->add_action( 'set_user_role', $users, 'send_main_when_user_role_changes', 10, 2 );
@@ -118,6 +118,7 @@ class Main {
     $this->loader->add_action( 'after_setup_theme', $media, 'add_theme_support' );
     $this->loader->add_action( 'after_setup_theme', $media, 'add_custom_image_sizes' );
     $this->loader->add_filter( 'wp_handle_upload_prefilter', $media, 'check_svg_on_media_upload' );
+    $this->loader->add_action( 'after_setup_theme', $media, 'customizer_custom_logo_setup' );
 
   }
 
@@ -131,6 +132,7 @@ class Main {
     $general    = new Theme\General();
     $pagination = new Theme\Pagination();
     $shortcode  = new Utils\Shortcodes();
+    $ajaxposts  = new Theme\Ajax_Posts();
 
     // Enque styles and scripts.
     $this->loader->add_action( 'wp_enqueue_scripts', $theme, 'enqueue_styles' );

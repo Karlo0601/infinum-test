@@ -6,6 +6,7 @@ $base-icons-font-family: 'icomoon';
 $base-content-padding: 15px;
 $base-content-margin: 30px;
 $base-content-full-width: 1140px;
+$base-content-narrow: 945px;
 $base-content-width: $base-content-full-width + ($base-content-padding*2);
 
 //Typography
@@ -13,9 +14,9 @@ $typography-map: (
   mobile: (
     giant:          72px,
     huge:           48px,
-    biggest:        30px,
-    bigger:         28px,
-    big:            26px,
+    biggest:        38px,
+    bigger:         32px,
+    big:            28px,
     largest:        24px,
     larger:         22px,
     large:          20px,
@@ -33,7 +34,7 @@ $button-size-map: (
     default: (
       text-size: 14px,
       line-height: 1.4,
-      height: 56px,
+      height: 57px,
     )
   )
 );

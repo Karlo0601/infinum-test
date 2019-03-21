@@ -5,37 +5,46 @@
     flex-flow: column;
     justify-content: center;
     align-items: center;
+    padding: 50px 0 110px;
   }
 
   &__title {
     @include text-size(huge);
     text-align: center;
-    color: $base-rouge-color;
-    margin-bottom: 15px;
+    color: $base-primary-color;
+    margin-top: 0;
+    margin-bottom: 18px;
     font-weight: 100;
+    line-height: 1.1;
+
+    @include media(tablet down) {
+      @include text-size(biggest);
+
+    }
   }
 
   &__form {
     position: relative;
     border: 0;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     display: flex;
     justify-content: center;
     align-items: center;
   }
   &__input {
-    width: 200px;
+    width: 135px;
 		display: inline-block;
 		border: none;
 		color: #555555;
 		font-weight: 300;
-		padding: 10px;
-		background: transparent;
+    padding: 5px 5px 5px 32px;
+    background: transparent;
     border-radius: 0;
+    height: auto;
 
     &:focus {
       box-shadow: none;
-      border-bottom: 1px solid $base-rouge-color;
+      border-bottom: 1px solid $base-primary-color;
     }
   }
   &__button {
@@ -43,6 +52,8 @@
     border: 0;
     font-size: 18px;
     padding: 5px;
+    position: absolute;
+    left: 0px;
 
     i {
       font-size: 18px;

@@ -29,6 +29,7 @@ class Media {
    */
   public function add_theme_support() {
     add_theme_support( 'post-thumbnails' );
+    add_theme_support( 'custom-logo' );
   }
 
   /**
@@ -39,6 +40,7 @@ class Media {
   public function add_custom_image_sizes() {
     add_image_size( 'listing', 570, 320, true );
     add_image_size( 'grid', 360, 289, true );
+    add_image_size( 'grid-sticky', 570, 360, true );
   }
 
   /**
@@ -130,5 +132,21 @@ class Media {
       }
     }
     return $response;
+  }
+
+  /**
+   * Defaults for custom-logo
+   *
+   * @since 1.0.0
+   */
+  public function customizer_custom_logo_setup() {
+    $defaults = array(
+        'height'      => 30,
+        'width'       => 175,
+        'flex-height' => true,
+        'flex-width'  => false,
+        'header-text' => array( 'site-title', 'site-description' ),
+    );
+    add_theme_support( 'custom-logo', $defaults );
   }
 }

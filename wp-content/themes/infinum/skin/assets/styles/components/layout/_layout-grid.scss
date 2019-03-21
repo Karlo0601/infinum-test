@@ -1,3 +1,27 @@
-// .layout-grid {
+.articles-grid {
 
-// }
+  &__container {
+    @include site-container();
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 0;
+
+    @include media(mobile down) {
+      flex-flow: column wrap;
+
+    }
+  }
+
+  &__sticky-post {
+    margin-bottom: 115px;
+    display: flex;
+    align-items: stretch;
+    height: 100%;
+
+    @include media(tablet down) {
+      margin-bottom: 45px;
+    }
+  }
+}

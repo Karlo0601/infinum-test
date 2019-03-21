@@ -87,3 +87,9 @@
   max-width: $base-content-width;
   margin: 0 auto;
 }
+
+%site-container-narrow {
+  @extend %site-padding;
+  max-width: $base-content-narrow;
+  margin: 0 auto;
+}

@@ -1,35 +1,22 @@
-.articles-grid {
-
-  &__container {
-    @include site-container();
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: 0;
-  }
-}
-
 .article-grid {
   max-width: calc(100% / 3 - 20px);
   width: 100%;
-  margin-right: 30px;
+  margin-right: 0px;
   margin-bottom: 45px;
 
-  &:nth-child(3n) {
-    margin-right: 0;
+  @include media(tablet down) {
+    max-width: calc(100% / 2 - 20px);
+
   }
-
-  &--sticky {
-    width: 100%;
+  @include media(mobile down) {
     max-width: 100%;
-    margin-right: 0;
+  }
+  &__image {
+    line-height: 0;
 
-    .article-grid__container {
-      display: flex;
-      flex-flow: row;
-      justify-content: flex-start;
-      align-content: center;
+    img {
+      width: 100%;
+      height: auto;
     }
   }
   &__container {
@@ -37,6 +24,184 @@
     flex-flow: column;
     justify-content: flex-start;
     align-content: center;
+    height: 100%;
+  }
+  &__content {
+    padding: 18px 7px 0;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+  }
+  &__date {
+    @include text-size(small);
+    line-height: 1.2;
+    margin-bottom: 5px;
+    color: $base-chateau-color;
+    display: block;
+  }
+  &__heading {
+    @include text-size(big);
+    line-height: 40px;
+    margin: 0 0 15px;
+
+    @include media(mobile down) {
+      @include text-size(larger);
+      line-height: 32px;
+    }
+
+  }
+  &__heading-link {
+    color: $base-dark-color;
+
+    &:hover {
+      color: $base-primary-color;
+    }
+  }
+  &__tags {
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+    margin: 0 0 2px;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-content: center;
+
+    li {
+      margin-right: 8px;
+      margin-bottom: 8px;
+      display: inline-flex;
+
+      a {
+        @include text-size(small);
+        background-color: $base-whild-sand-color;
+        color: $base-light-gray-color;
+        line-height: 1.1;
+        font-weight: 700;
+        vertical-align: middle;
+        padding: 5px 8px;
+        text-align: center;
+        border-radius: 3px;
+        transition: all ease 0.3s;
+
+        &:hover {
+          color: $base-primary-color;
+          background-color: lighten($base-primary-color, 25%);
+          transition: all ease 0.3s;
+        }
+      }
+    }
+  }
+  &__excerpt {
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 300;
+    margin-bottom: 40px;
   }
 
+  footer {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  &__favorites, &__comments {
+    margin-right: 30px;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1;
+    color: $base-light-gray-color;
+
+    i {
+      margin-right: 15px;
+      vertical-align: baseline;
+      font-size: 14px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  // Sticky post style
+
+  &--sticky {
+    width: 100%;
+    max-width: 100%;
+    margin-right: 0;
+    margin-bottom: 0;
+
+    @include media(tablet down) {
+      max-width: 100%;
+      width: 100%;
+    }
+
+    .article-grid {
+      margin-bottom: 0;
+
+
+
+      &__container {
+        display: flex;
+        flex-flow: row;
+        justify-content: flex-start;
+        align-content: center;
+
+        @include media(tablet) {
+          max-width: 100%;
+
+        }
+
+        @include media(mobile down) {
+          max-width: 100%;
+          width: 100%;
+          flex-flow: column;
+        }
+      }
+      &__image {
+        max-width: calc(50% - 30px);
+        width: 100%;
+        margin-right: 60px;
+
+        @include media(mobile down) {
+          max-width: 100%;
+          margin-right: 0;
+        }
+      }
+      &__content {
+        max-width: calc(50% - 30px);
+        width: 100%;
+        margin-right: 0px;
+        padding: 0;
+
+        @include media(mobile down) {
+          max-width: 100%;
+          padding: 18px 7px 0;
+        }
+      }
+      &__heading {
+        font-size: 36px;
+        line-height: 1.1;
+        margin-bottom: 20px;
+      }
+      &__tags {
+        margin: 0 0 10px;
+      }
+    }
+  }
+}
+
+
+.load-more {
+
+  &__container {
+    padding: 30px 0 120px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    @include media(mobile down) {
+      max-width: 100%;
+      padding: 30px 0 60px;
+    }
+  }
 }
