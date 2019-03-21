@@ -15,6 +15,14 @@ $logo_footer_img  = General_Helper::get_manifest_assets_data( 'logo.png' );
 $footer_facebook  = get_theme_mod( 'footer_facebook', '' );
 $footer_twitter   = get_theme_mod( 'footer_twitter', '' );
 $footer_instagram = get_theme_mod( 'footer_instagram', '' );
+$footer_logo      = get_theme_mod( 'footer_logo' );
+$logo             = wp_get_attachment_image_src( $footer_logo, 'full' );
+
+if ( ! empty( $footer_logo ) ) {
+  $logo_footer_img = $logo[0];
+} else {
+  $logo_footer_img = General_Helper::get_manifest_assets_data( 'logo.png' );
+}
 ?>
 
 <footer class="footer">

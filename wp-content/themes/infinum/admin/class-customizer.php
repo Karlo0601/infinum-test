@@ -111,7 +111,17 @@ class Customizer {
           'section' => 'website_customizer_options',
       )
     );
+    // Related posts title.
+    $wp_customize->add_setting( 'related_posts_title' );
 
+    $wp_customize->add_control(
+      'related_posts_title',
+      array(
+          'label' => __( 'Related posts title', 'infinum' ),
+          'type' => 'text',
+          'section' => 'website_customizer_options',
+      )
+    );
     // Footer options.
     $wp_customize->add_section(
       'footer_options',
@@ -126,11 +136,19 @@ class Customizer {
     $wp_customize->add_setting( 'footer_logo' );
 
     $wp_customize->add_control(
-      'footer_logo',
-      array(
-          'label' => __( 'Footer logo', 'infinum' ),
-          'type' => 'text',
-          'section' => 'footer_options',
+      new \WP_Customize_Cropped_Image_Control(
+        $wp_customize,
+        'footer_logo',
+        array(
+            'label'      => __( 'Footer logo', 'infinum' ),
+            'section'    => 'footer_options',
+            'settings'   => 'footer_logo',
+            'height'      => 30,
+            'width'       => 175,
+            'flex-height' => false,
+            'flex-width'  => true,
+            'header-text' => array( 'site-title', 'site-description' ),
+        )
       )
     );
 

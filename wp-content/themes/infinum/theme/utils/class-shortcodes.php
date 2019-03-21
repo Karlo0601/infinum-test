@@ -71,6 +71,7 @@ class Shortcodes {
           'container'     => '',
           'tag'           => '',
           'ignore-sticky' => '',
+          'exclude-post'  => '',
       ),
       $atts
     );
@@ -113,7 +114,6 @@ class Shortcodes {
       );
     return '<div class="video__container u__embed-video-responsive js-video-container">
     <iframe src="//www.youtube.com/embed/' . $atts['identifier'] . '" height="240" width="320" allowfullscreen="" frameborder="0" class="js-video-iframe"></iframe>
-    <button class="video__button u__embed-video-responsive-poster js-video-poster" style="background-image:url(' . $atts['poster'] . ');"><i class="icon-ic-play"></i></button>
     </div>
     <p class="video__title">' . $atts['video-title'] . '</p>
     <!--.video-container-->';

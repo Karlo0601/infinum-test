@@ -1,62 +1,62 @@
 
 .icon-ic-apple {
-  &:before {
+  &::before {
     content: $icon-ic-apple;
-    color: #fff;
+    color: #FFFFFF;
   }
 }
 .icon-ic-comment {
-  &:before {
+  &::before {
     content: $icon-ic-comment;
-    color: #999;
+    color: #999999;
   }
 }
 .icon-ic-facebook {
-  &:before {
+  &::before {
     content: $icon-ic-facebook;
-    color: #dd4ba3;
+    color: #DD4BA3;
   }
 }
 .icon-ic-heart {
-  &:before {
+  &::before {
     content: $icon-ic-heart;
-    color: #999;
+    color: #999999;
   }
 }
 .icon-ic-instagram {
-  &:before {
+  &::before {
     content: $icon-ic-instagram;
-    color: #dd4ba3;
+    color: #DD4BA3;
   }
 }
 .icon-ic-play {
-  &:before {
+  &::before {
     content: $icon-ic-play;
-    color: #fff;
+    color: #FFFFFF;
   }
 }
 .icon-ic-search {
-  &:before {
+  &::before {
     content: $icon-ic-search;
-    color: #555;
+    color: #555555;
   }
 }
 .icon-ic-twitter {
-  &:before {
+  &::before {
     content: $icon-ic-twitter;
-    color: #dd4ba3;
+    color: #DD4BA3;
   }
 }
 .icon-ic-unicorn {
-  &:before {
+  &::before {
     content: $icon-ic-unicorn;
-    color: #fff;
+    color: #FFFFFF;
   }
 }
 .icon-ic-writer {
-  &:before {
+  &::before {
     content: $icon-ic-writer;
-    color: #fff;
+    color: #FFFFFF;
   }
 }
 

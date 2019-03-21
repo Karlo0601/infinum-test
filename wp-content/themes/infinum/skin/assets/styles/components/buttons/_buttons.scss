@@ -12,7 +12,7 @@
   font-weight: 700;
   text-align: center;
   text-transform: uppercase;
-  border: 0px solid;
+  border: 0 solid;
   cursor: pointer;
   border-radius: 3px;
 
@@ -40,7 +40,7 @@
 
     @include media(tablet down) {
       margin-bottom: 20px;
-      margin-right: 0px;
+      margin-right: 0;
     }
 
     &:hover {
@@ -63,7 +63,12 @@
     text-transform: uppercase;
     border-radius: 0;
 
-    &:disabled, &[disabled] {
+    &:hover {
+      background-color: $base-dark-color;
+    }
+
+    &:disabled,
+    &[disabled] {
       opacity: 0.7;
       pointer-events: none;
       box-shadow: none;

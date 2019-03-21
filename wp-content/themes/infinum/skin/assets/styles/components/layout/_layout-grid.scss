@@ -8,6 +8,11 @@
     align-items: stretch;
     padding: 0;
 
+    @include media(desktop up) {
+      justify-content: flex-start;
+
+    }
+
     @include media(mobile down) {
       flex-flow: column wrap;
 

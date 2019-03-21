@@ -11,9 +11,13 @@
     background-size: cover;
     position: relative;
 
+    @include media(mobile down) {
+      height: 350px;
+    }
+
     &::before {
       content: '';
-      background-color: rgba(0,0,0,0.3);
+      background-color: rgba(0, 0, 0, 0.3);
       width: 100%;
       height: 100%;
       position: absolute;
@@ -31,6 +35,10 @@
     margin-top: auto;
     z-index: 5;
     position: relative;
+
+    @include media(mobile down) {
+      @include text-size(big);
+    }
   }
   &__author {
     @include text-size(default);
@@ -48,9 +56,9 @@
     }
   }
   &__back-to-blog {
+    @include text-size(default);
     margin-top: auto;
     margin-bottom: 20px;
-    @include text-size(default);
     font-weight: 500;
     color: $base-white-color;
     transition: color ease-out 0.2s;
@@ -64,25 +72,83 @@
   }
   &__content {
     //@include site-container($max-width: 550px);
-    max-width: 1140px;
+    max-width: 560px;
     margin: 0 auto;
     overflow: visible;
     position: relative;
-    padding: 50px 15.5%;
+    padding: 50px 0;
+
+    @include media(tablet down) {
+      padding: 25px 15px;
+    }
 
     p {
       line-height: 30px;
     }
+    .wp-caption {
+      margin-bottom: 55px;
 
+      @include media(tablet up) {
+        margin-left: -35%;
+        margin-right: -35%;
+        max-width: 950px;
+        position: relative;
+        width: 100vw;
+      }
+      @include media(tablet) {
+        max-width: 100%;
+      }
+      @include media(tablet down) {
+        max-width: 100%;
+        margin-bottom: 25px;
+      }
+
+    }
+    .wp-caption-text {
+      @include text-size(medium);
+      color: $base-light-gray-color;
+      text-align: center;
+    }
     img {
-      margin-left: -145px;
-      margin-right: -145px;
-      max-width: 950px;
-      position: relative;
-      width: 100vw;
+      width: 100%;
+      height: auto;
     }
   }
+  ul.single-post__tags {
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+    margin: 0 0 2px 0;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-content: center;
 
+
+    li {
+      margin-right: 8px;
+      margin-bottom: 8px;
+      display: inline-block;
+      padding: 0;
+
+      a {
+        @include text-size(small);
+        background-color: $base-whild-sand-color;
+        color: $base-light-gray-color;
+        line-height: 1.1;
+        font-weight: 700;
+        vertical-align: middle;
+        padding: 5px 8px;
+        text-align: center;
+        border-radius: 3px;
+        transition: all ease 0.3s;
+      }
+      a:hover {
+        color: $base-primary-color;
+        background-color: lighten($base-primary-color, 25%);
+        transition: all ease 0.3s;
+      }
+    }
+  }
   .content {
     &__quote {
       font-size: 30px;
@@ -93,7 +159,11 @@
       background-color: $base-white-color;
       font-weight: 300;
       padding: 50px 70px;
-      quotes: "“" "”" "‘" "’";
+      quotes: '“' '”' '‘' '’';
+
+      @include media(tablet down) {
+        padding: 30px 50px;
+      }
 
       &.align--left {
         margin-left: -50%;
@@ -102,7 +172,7 @@
         clear: left;
         float: left;
 
-        @include media(desktop down){
+        @include media(desktop down) {
           margin-left: 0%;
         }
       }
@@ -113,14 +183,14 @@
         clear: right;
         float: right;
 
-        @include media(desktop down){
+        @include media(desktop down) {
           margin-right: 0%;
         }
       }
-      &:before {
+      before {
           content: open-quote;
       }
-      &:after {
+      after {
           content: close-quote;
       }
     }
@@ -129,28 +199,27 @@
   .video {
 
     &__container {
+      margin-bottom: 15px;
 
-    }
-    &__button {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-flow: row;
-      justify-content: center;
-      align-content: center;
-      border: 0;
-
-      i {
-        font-size: 95px;
+      @include media(desktop up) {
+        margin-left: -35%;
+        margin-right: -35%;
+        max-width: 950px;
+        position: relative;
+        width: 100vw;
+        padding-bottom: 100%;
       }
     }
+
     &__title {
       @include text-size(medium);
       color: $base-light-gray-color;
       text-align: center;
+      margin-bottom: 55px;
+
+      @include media(desktop up) {
+          margin-bottom: 25px;
+      }
     }
   }
 }

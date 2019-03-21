@@ -49,16 +49,17 @@ class Ajax_Posts {
     if ( isset( $_POST['ignore-sticky'] ) ) {
       $ignore_sticky = sanitize_text_field( wp_unslash( $_POST['ignore-sticky'] ) );
     }
-
-    $sticky = get_option( 'sticky_posts' );
+    if ( isset( $_POST['exclude-post'] ) ) {
+      $exclude_post = sanitize_text_field( wp_unslash( $_POST['exclude-post'] ) );
+    }
 
     $args = array(
         'post_type'           => array( $post_type ),
         'order_by'            => 'date',
         'order'               => 'DESC',
         'posts_per_page'      => $post_per_page,
-        'post__not_in'        => $sticky,
-        'ignore_sticky_posts' => $ignore_sticky,
+        'post__not_in'        => explode( ',', $exclude_post ),
+        'ignore_sticky_posts' => 1,
     );
 
     if ( isset( $_POST['page'] ) ) {

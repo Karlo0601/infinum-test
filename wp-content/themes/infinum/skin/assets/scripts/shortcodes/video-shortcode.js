@@ -1,18 +1,19 @@
 jQuery(document).ready(function() {
+  const {tinymce, tinyMCE} = window.tinymce;
   tinymce.create('tinymce.plugins.video_plugin', {
     init(ed, url) {
 
       // Register command for when button is clicked
       ed.addCommand('video_insert_shortcode', function() {
         const selected = tinyMCE.activeEditor.selection.getContent();
-
+        let content = '';
         if (selected) {
 
           // If text is selected when button is clicked
           // Wrap shortcode around it.
-          const content = `[responsive-video identifier="${selected}" poster="POSTER IMAGE URL" video-title="VIDEO TITLE"]`;
+          content = `[responsive-video identifier="${selected}" poster="POSTER IMAGE URL" video-title="VIDEO TITLE"]`;
         } else {
-          const content = '[responsive-video identifier="VIDEO ID" poster="POSTER IMAGE URL" video-title="VIDEO TITLE"]';
+          content = '[responsive-video identifier="VIDEO ID" poster="POSTER IMAGE URL" video-title="VIDEO TITLE"]';
         }
 
         tinymce.execCommand('mceInsertContent', false, content);

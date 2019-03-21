@@ -60,9 +60,9 @@ class Theme extends Config {
       'themeLocalization',
       array(
           'ajaxurl'       => admin_url( 'admin-ajax.php' ),
-          'ajax_nonce'    => wp_create_nonce( 'security-nonce' ),
-          'current_page'  => get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1,
-          'max_page'      => $wp_query->max_num_pages,
+          'ajaxnonce'    => wp_create_nonce( 'security-nonce' ),
+          'currentpage'  => get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1,
+          'maxpage'      => $wp_query->max_num_pages,
       )
     );
   }

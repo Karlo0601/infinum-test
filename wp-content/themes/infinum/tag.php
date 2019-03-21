@@ -18,6 +18,7 @@ $load_more = General_Helper::inf_do_shortcode(
       'post-per-page' => '6',
       'label'         => 'Load more',
       'tag'           => get_query_var( 'tag' ),
+      'ignore-sticky' => 0,
   )
 );
 
@@ -30,7 +31,7 @@ if ( have_posts() ) { ?>
     <h1 class="search-articles__header-title">
       <?php
       // translators: 1: Search Query.
-      printf( esc_html__( 'Search Results for: %s', 'infinum' ), '<span>' . get_search_query() . '</span>' );
+      printf( esc_html__( 'Search Results for: %s', 'infinum' ), '<span>' . esc_html( get_query_var( 'tag' ) ) . '</span>' );
       ?>
     </h1>
   </header>
@@ -48,6 +49,7 @@ if ( have_posts() ) { ?>
       'posts_per_page'      => 6,
       'paged'               => $paged_tags,
       'tag'                 => get_query_var( 'tag' ),
+      'ignore_sticky_posts' => 0,
   );
   $tags_posts = new WP_Query( $args );
   if ( $tags_posts->have_posts() ) {

@@ -9,6 +9,7 @@
  use Infinum\Theme\Utils\Theme_Helpers;
 
 get_header();
+$sticky = get_option( 'sticky_posts' );
 
 $load_more    = General_Helper::inf_do_shortcode(
   'loadmore',
@@ -16,7 +17,9 @@ $load_more    = General_Helper::inf_do_shortcode(
       'container'     => 'js-load-more-container',
       'post-type'     => 'post',
       'post-per-page' => '6',
-      'label'         => 'Load more',
+      'label'         => esc_html__( 'Load more', 'infinum' ),
+      'ignore-sticky' => 1,
+      'exclude-post'  => implode( ',', $sticky ),
   )
 );
 $allowed_html = Theme_Helpers::allowed_html();
@@ -29,7 +32,7 @@ get_template_part( 'template-parts/header/search', 'form' );
 
 <div class="articles-grid__sticky-post">
   <?php
-  $sticky       = get_option( 'sticky_posts' );
+
   $args_sticky  = array(
       'posts_per_page' => 1,
       'post__in'  => $sticky,

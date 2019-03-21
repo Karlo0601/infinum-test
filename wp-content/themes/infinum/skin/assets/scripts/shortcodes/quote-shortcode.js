@@ -1,18 +1,20 @@
 jQuery(document).ready(function() {
+  const {tinymce, tinyMCE} = window.tinymce;
   tinymce.create('tinymce.plugins.quote_plugin', {
     init(ed, url) {
 
       // Register command for when button is clicked
       ed.addCommand('quote_insert_shortcode', function() {
-        let selected = tinyMCE.activeEditor.selection.getContent();
+        const selected = tinyMCE.activeEditor.selection.getContent();
+        let content = '';
 
         if (selected) {
 
           // If text is selected when button is clicked
           // Wrap shortcode around it.
-          const content = `[quotes align="left"]${selected}[/quotes]`;
+          content = `[quotes align="left"]${selected}[/quotes]`;
         } else {
-          const content = '[quotes align="left"]Quote Text[/quotes]';
+          content = '[quotes align="left"]Quote Text[/quotes]';
         }
 
         tinymce.execCommand('mceInsertContent', false, content);
